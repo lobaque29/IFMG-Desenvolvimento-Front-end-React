@@ -1,17 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<script type="text/babel" src="Greeting.jsx"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista de Tarefas</title>
+<style>
+/* Adicione seus estilos aqui */
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+button.remove-btn {
+  margin-left: 8px;
+}
+</style>
 </head>
-
 <body>
-<div id="root"></div>
-       
+<h1>Lista de Tarefas</h1>
+<div>
+<input type="text" id="novaTarefa" placeholder="Nova tarefa...">
+<button id="adicionarTarefa">Adicionar</button>
+</div>
+<ul id="listaTarefas">
+<!-- As tarefas serão adicionadas aqui -->
+ <li>Estudar Html</li>
+ <li>Aprender Css</li>
+ <li>Estudar javascript</li>
+ <li>aprender React</li>
+</ul>
+<script>
+function createTaskElement(text) {
+  const li = document.createElement('li');
 
+  const span = document.createElement('span');
+  span.textContent = text;
+  span.style.cursor = 'pointer';
+  span.addEventListener('click', () => li.classList.toggle('completed'));
+
+  const btn = document.createElement('button');
+  btn.textContent = 'Excluir';
+  btn.className = 'remove-btn';
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    li.remove();
+  });
+
+  li.appendChild(span);
+  li.appendChild(btn);
+  return li;
+}
+
+function initializeExistingTasks() {
+  const ul = document.getElementById('listaTarefas');
+  const texts = Array.from(ul.querySelectorAll('li')).map(li => li.textContent.trim());
+  ul.innerHTML = '';
+  texts.forEach(t => ul.appendChild(createTaskElement(t)));
+}
+
+document.getElementById("adicionarTarefa").addEventListener("click", function() {
+  const tarefaInput = document.getElementById("novaTarefa");
+  const tarefaTexto = tarefaInput.value.trim();
+  if (tarefaTexto !== "") {
+    const li = createTaskElement(tarefaTexto);
+    document.getElementById("listaTarefas").appendChild(li);
+    tarefaInput.value = "";
+  }
+});
+
+initializeExistingTasks();
 </script>
 </body>
-</html
+</html>
