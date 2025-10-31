@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="script.js" defer></script>
+
 </head>
 <body>
+  <button id="meu botao">Clique aqui</button>
   
+<script>
+  document.getElementById("meu botao").addEventListener("click", function(event) {
+  console.log("tipo do evento:", event.type);
+  console.log("elemento alvo:", event.target);
+  console.log("elemento atual:", event.currentTarget);
+  console.log("timestamp:", event.timeStamp);
+}
+);
+  </script>
+
 </body>
-</html>
+</html>   
