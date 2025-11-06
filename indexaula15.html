@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //progamaçao orientado a objetos(POO)
+    //obejtos
+    let carro = {
+      tipo:"BMw",
+      modelo:"x3",
+      cor:"vermelho",
+      ano:"2022"
+    };
+    for(let chave in carro){
+      console.log(chave + ":" + carro[chave]);
+    }
+  
+  let lugar= {
+    nome:"praça 7",
+    idade:"120 anos",
+    cidade:"Belo Horizonte",
+  };
+  console.log(lugar.nome,"tem", lugar.idade,"e fica em", lugar.cidade);
+  
+
+let objetoABC = {
+  a:"10",
+  b:"21",
+  c:"-5"
+}  
+
+for(let chave in objetoABC){
+  console.log(chave + ":" + "=>" + objetoABC[chave]);
+}
+
+
+
+let contaBancaria = {
+  titular:"ruan",
+  saldo:"1000",
+  
+  depositar:function(valor){
+    this.saldo = this.saldo + valor;
+  },
+  retirar:function(valor){
+    if(valor<= this.saldo){
+      this.saldo = this.saldo - valor;
+
+    }else{
+      console.log("saldo insuficiente");
+    }
+  },
+
+  exibirSaldo:function(){
+    console.log("saldo atual:" + this.saldo);
+  }
+
+}
+
+
+
+  </script>
+  
+</body>
+</html>
