@@ -20,9 +20,46 @@ apresentar(){
 let p1 = new pessoa ("ana",30);
 let p2 = new pessoa ("bia",40)
 
-p1.apresentar()
-p2.apresentar()
+p1.apresentar();
+p2.apresentar();
 
+class Retangulo{
+  constructor(nome,largura,altura){
+    this.nome = nome;
+    this.largura = largura;
+    this.altura = altura;
+    
+  }
+  obterNome(){
+    return this.nome;
+  };
+  calcularPerimetro(){
+    return 2*(this.largura + this.altura);
+  }
+calcularArea(){
+    return this.largura * this.altura;
+  }
+  atualizarLargura(novaLargura){
+    this.largura = novaLargura;
+  }
+  atualizarAltura(novaAltura){
+    this.altura = novaAltura;
+  }
+};
+
+let retangulo1 = new Retangulo("retangulo1",5,10);
+console.log(`Nome: ${retangulo1.obterNome()}`);
+
+console.log(`Perímetro: ${retangulo1.calcularPerimetro()}`);
+
+console.log(`Área: ${retangulo1.calcularArea()}`);
+
+retangulo1.atualizarLargura(7);
+retangulo1.atualizarAltura(12);
+console.log(`Nova Largura: ${retangulo1.largura}`);
+console.log(`Nova Altura: ${retangulo1.altura}`);
+console.log(`Novo Perímetro: ${retangulo1.calcularPerimetro()}`);
+console.log(`Nova Área: ${retangulo1.calcularArea()}`);
 
 
 
