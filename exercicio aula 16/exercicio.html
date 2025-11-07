@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class aluno{
+      constructor(nome,notas){
+        this.nome = nome;
+        this.notas = notas;
+      }
+      obterNome(){
+        return this.nome;
+      }
+      adicionarNota(novaNota){
+        this.notas.push(novaNota);
+      }
+      calcularMedia(){
+        const soma = this.notas.reduce((acc, curr) => acc + curr, 0);
+        return soma / this.notas.length;
+      }
+    }
+      let aluno1 = new aluno("Carlos",[8,7,9]);
+      console.log(`Nome do Aluno: ${aluno1.obterNome()}`);
+      console.log(`Média das Notas: ${aluno1.calcularMedia()}`);
+      aluno1.adicionarNota(10);
+      console.log(`Nova Média das Notas: ${aluno1.calcularMedia()}`);
+
+
+    
+  
+  </script>
+  
+</body>
+</html>
