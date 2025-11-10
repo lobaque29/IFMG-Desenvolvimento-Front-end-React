@@ -1,0 +1,66 @@
+import React from 'react';
+
+function RecipeCard() {
+  
+  const receita = {
+    titulo: 'Bolo de Cenoura',
+    tempoPreparo: 90, 
+    dificuldade: 'Médio',
+    ingredientes: [
+      '3 cenouras médias',
+      '4 ovos',
+      '1 xícara de óleo',
+      '2 xícaras de açúcar',
+      '2 e 1/2 xícaras de farinha de trigo',
+      '1 colher de sopa de fermento'
+    ],
+    modoPreparo:
+      'Bata no liquidificador as cenouras, ovos e óleo. Misture com os ingredientes secos e leve ao forno por 40 minutos a 180°C.'
+  };
+
+  
+  const tempoEmHoras =
+    receita.tempoPreparo > 60
+      ? `${Math.floor(receita.tempoPreparo / 60)}h ${receita.tempoPreparo % 60}min`
+      : `${receita.tempoPreparo}min`;
+
+  
+  const corDificuldade = {
+    Fácil: 'green',
+    Médio: 'orange',
+    Difícil: 'red'
+  };
+
+  const estiloCard = {
+    border: '2px solid #ccc',
+    borderRadius: '10px',
+    padding: '20px',
+    maxWidth: '400px',
+    margin: '30px auto',
+    fontFamily: 'Arial, sans-serif',
+    backgroundColor: '#fdfdfd'
+  };
+
+  const estiloDificuldade = {
+    color: corDificuldade[receita.dificuldade],
+    fontWeight: 'bold'
+  };
+
+  return (
+    <div style={estiloCard}>
+      <h2>{receita.titulo}</h2>
+      <p><strong>Tempo de preparo:</strong> {tempoEmHoras}</p>
+      <p><strong>Dificuldade:</strong> <span style={estiloDificuldade}>{receita.dificuldade}</span></p>
+      <h3>Ingredientes:</h3>
+      <ul>
+        {receita.ingredientes.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <h3>Modo de preparo:</h3>
+      <p>{receita.modoPreparo}</p>
+    </div>
+  );
+}
+
+export default RecipeCard;
