@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Animais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; text-align: center; }
+    .menu-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .menu-btn:hover { background-color: #45a049; }
+    #output {
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-left: 4px solid #4CAF50;
+      margin-top: 20px;
+      min-height: 100px;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🐾 Gerenciador de Animais</h1>
+    <div id="menu"></div>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    class Animal {
+      constructor(nome, numerodePatas, som) {
+        this.nome = nome;
+        this.numerodePatas = numerodePatas;
+        this.som = som;
+      }
+      apresentar() {
+        return `Olá, meu nome é ${this.nome} e tenho ${this.numerodePatas} patas.`;
+      }
+      emitirSom() {
+        return this.som || 'Som';
+      }
+    }
+
+    class Cachorro extends Animal {
+      constructor(nome) {
+        super(nome, 4, 'au, au');
+      }
+    }
+
+    class Gato extends Animal {
+      constructor(nome) {
+        super(nome, 4, 'miau, miau');
+      }
+    }
+
+    class Passaro extends Animal {
+      constructor(nome) {
+        super(nome, 2, 'piu, piu');
+      }
+    }
+
+    let Animais = [];
+    const output = document.getElementById('output');
+
+    function mostrar(mensagem) {
+      output.innerHTML += mensagem + '\n';
+      output.scrollTop = output.scrollHeight;
+    }
+
+    function limpar() {
+      output.innerHTML = '';
+    }
+
+    function cadastrarCachorro() {
+      let nome = prompt('Digite o nome do cachorro:');
+      if (nome) {
+        Animais.push(new Cachorro(nome));
+        limpar();
+        mostrar('✅ Cachorro cadastrado com sucesso!');
+      }
+    }
+
+    function cadastrarGato() {
+      let nome = prompt('Digite o nome do gato:');
+      if (nome) {
+        Animais.push(new Gato(nome));
+        limpar();
+        mostrar('✅ Gato cadastrado com sucesso!');
+      }
+    }
+
+    function cadastrarPassaro() {
+      let nome = prompt('Digite o nome do pássaro:');
+      if (nome) {
+        Animais.push(new Passaro(nome));
+        limpar();
+        mostrar('✅ Pássaro cadastrado com sucesso!');
+      }
+    }
+
+    function cadastrarOutroAnimal() {
+      let nome = prompt('Digite o nome do animal:');
+      if (nome) {
+        let patas = prompt('Digite o número de patas:');
+        let som = prompt('Digite o som do animal:');
+        Animais.push(new Animal(nome, parseInt(patas), som));
+        limpar();
+        mostrar('✅ Animal cadastrado com sucesso!');
+      }
+    }
+
+    function listarAnimais() {
+      limpar();
+      if (Animais.length === 0) {
+        mostrar('❌ Nenhum animal cadastrado.');
+        return;
+      }
+      mostrar('📋 --- Lista de Animais ---\n');
+      Animais.forEach((animal, index) => {
+        mostrar(`${index + 1}. ${animal.nome} (${animal.numerodePatas} patas)`);
+      });
+    }
+
+    function emitirSons() {
+      limpar();
+      if (Animais.length === 0) {
+        mostrar('❌ Nenhum animal cadastrado.');
+        return;
+      }
+      mostrar('🔊 --- Sons dos Animais ---\n');
+      Animais.forEach(animal => {
+        mostrar(`${animal.nome}: ${animal.emitirSom()}`);
+      });
+    }
+
+    function criarMenu() {
+      const menuDiv = document.getElementById('menu');
+      menuDiv.innerHTML = `
+        <button class="menu-btn" onclick="cadastrarCachorro()">1️⃣ Cadastrar Cachorro</button>
+        <button class="menu-btn" onclick="cadastrarGato()">2️⃣ Cadastrar Gato</button>
+        <button class="menu-btn" onclick="cadastrarPassaro()">3️⃣ Cadastrar Pássaro</button>
+        <button class="menu-btn" onclick="cadastrarOutroAnimal()">4️⃣ Cadastrar Outro Animal</button>
+        <button class="menu-btn" onclick="listarAnimais()">5️⃣ Listar Todos os Animais</button>
+        <button class="menu-btn" onclick="emitirSons()">6️⃣ Emitir Todos os Sons</button>
+        <button class="menu-btn" style="background-color: #f44336;" onclick="limpar(); mostrar('👋 Programa encerrado.')">0️⃣ Sair</button>
+      `;
+    }
+
+    criarMenu();
+    limpar();
+    mostrar('Bem-vindo ao Gerenciador de Animais! 🐾');
+  </script>
+</body>
+</html>
