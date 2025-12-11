@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-image: url('https://static.vecteezy.com/ti/vetor-gratis/t1/6691887-amarelo-ponto-de-interrogacao-fundo-com-texto-espaco-simbolo-quiz-vetor.jpg');
+    }
+  </style>
+  
+</head>
+<body>
+ <h1>Formulario de cadastro</h1>
+ <form>
+  <input type="file" id="arquivo" name="arquivo"><br><br>
+
+  
+  
+  <label for="nome">Nome:</label>
+    <input type="text" id= "nome"><br><br>
+    <label for ="email">Email:</label>
+    <input type="email" id="email"><br><br>
+    <label for="Senha">Senha:</label>
+    <input type="password" id="Senha"><br><br>
+    <input type="submit" value="Enviar"><br>
+  </form><br><br>
+  
+<h1>Responda as perguntas</h1>
+<p>Qual é o seu gênero?</p>
+<input type="radio" id="masculino" name="genero" value="masculino">
+<label for="masculino">Masculino</label><br>
+<input type="radio" id="feminino" name="genero" value="feminino">
+<label for="feminino">Feminino</label><br>
+<input type="radio" id="outro" name="genero" value="outro">
+<label for="outro">Outro</label><br>
+
+<p>Quais são seus hobbies?</p>
+<input type="checkbox" id="leitura" name="hobby" value="leitura>
+<label for="leitura">Leitura</label><br>
+<input type="checkbox" id="esportes" name="hobby" value="esportes>
+<label for="esportes">Esportes</label><br>
+<input type="checkbox" id="musica" name="hobby" value="musica>
+<label for="musica">Música</label><br><br>
+
+<form>
+  <label for="idioma">Selecione seu idioma preferido:</label>
+  <select id="idioma" name="idioma">
+    <option value="portugues">Português</option>
+    <option value="ingles">Inglês</option>
+    <option value="espanhol">Espanhol</option>
+  </select><br><br>
+  <input type="submit" value="Enviar Idioma"><br><br>
+  <label for="color">Escolha sua cor favorita:</label>
+  <input type="color" id="color" name="color" value="#ff0000"><br><br>
+  <input type="submit" value="Enviar Cor">
+
+</form><br><br>
+
+<form>
+  <label for="comentarios">Deixe seus comentários:</label><br>
+  <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br><br>
+  <input type="submit" value="Enviar Comentários">
+
+</form> <br>
+
+<form>
+  
+  <label for="data">Selecione a data:</label>
+  <input type="date" id="data" name="data"><br><br>
+  <label for="hora">Selecione a hora:</label>
+  <input type="time" id="hora" name="hora"><br><br>
+</form>
+
+
+
+
+
+</body>
+</html>
