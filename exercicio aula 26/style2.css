@@ -1,0 +1,24 @@
+div {
+
+width: 100px;
+height: 100px;
+background-image: url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg");
+position: relative;
+animation-name: myAnimation;
+animation-duration: 5s;
+animation-timing-function: linear;
+animation-delay: 2s;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+@keyframes myAnimation {
+0% {background-image:url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg"); left:0px; top:0px;}
+25% {background-image:url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg"); left:200px; top:0px;}
+50% {background-image:url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg"); left:200px; top:200px;}
+75% {background-image:url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg"); left:0px; top:200px;}
+100% {background-image:url("https://seumelhorjogo.com/wp-content/uploads/2024/05/Galo-Volpi-840x400.jpg"); left:0px; top:0px;}
+}
