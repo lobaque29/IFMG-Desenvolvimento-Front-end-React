@@ -1,0 +1,11 @@
+# Arquivos temporários e dependências
+node_modules/
+ dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+desktop.ini
