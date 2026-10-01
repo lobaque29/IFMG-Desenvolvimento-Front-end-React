@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos de Teclado</title>
+</head>
+<body>
+  <input type="text" id="campo" placeholder="Digite algo">
+  <p id="resultado">Nenhuma tecla pressionada.</p>
+
+  <script>
+    const campo = document.getElementById('campo');
+    const resultado = document.getElementById('resultado');
+
+    campo.addEventListener('keydown', function(event) {
+      resultado.textContent = `Tecla pressionada: ${event.key}`;
+    });
+  </script>
+</body>
+</html>

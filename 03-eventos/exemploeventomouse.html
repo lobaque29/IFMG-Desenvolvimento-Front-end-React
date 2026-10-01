@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id = "minhaDiv" style="width:200px; height:200px; border: 1px solid black; background-color:lightblue;">
+    Passe o mouse aqui
+  </div>
+  <script>
+  const minhaDiv = document.getElementById("minhaDiv");
+  minhaDiv.addEventListener("mouseover", function(event) {
+    console.log("Mouse entrou na div");
+    this.style.backgroundColor = "lightgreen";
+  });
+  minhaDiv.addEventListener("mouseout", function(event) {
+    console.log("Mouse saiu da div");
+    this.style.backgroundColor = "lightblue";
+  });
+  </script>
+  
+<div>
+  <button id = "botaocontador">Contar</button>
+  <p id="resultado">0</p>
+  <script>
+    let contador = 0;
+    document.getElementById("botaocontador").addEventListener("click", function() {
+      contador++;
+      document.getElementById("resultado").innerHTML = `<h1>textogrande</h1 >`;
+      console.log("Contador:", contador);
+    });
+
+</script>
+
+</div>
+
+</body>
+</html>
