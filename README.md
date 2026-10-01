@@ -1,20 +1,63 @@
 # IFMG — Desenvolvimento Front-end React
 
-Repositório de atividades e exercícios do curso de Desenvolvimento Front-end React do IFMG.
+Repositório de atividades, exercícios e projetos do curso de Desenvolvimento Front-end React do IFMG.
 
 ## Organização atual
 
-- [`01-html/`](./01-html/) — HTML e páginas introdutórias
-- [`02-javascript/`](./02-javascript/) — lógica e exercícios JavaScript
-- [`03-eventos/`](./03-eventos/) — eventos de mouse e teclado
-- [`05-css-e-formularios/`](./05-css-e-formularios/) — CSS e formulários
-- [`08-react/`](./08-react/) — React e componentes
-- [`Introduçao Html/`](./Introduçao%20Html/) — material legado sem reorganização completa
-- [`exercicio react/`](./exercicio%20react/) — exercícios React em desenvolvimento
-- [`Exercicios aula 22- Formularios/`](./Exercicios%20aula%2022-%20Formularios/) — material legado
+A estrutura foi organizada em módulos por assunto, mantendo os arquivos antigos preservados para não quebrar links e referências existentes.
 
-## Observações
+```text
+IFMG-Desenvolvimento-Front-end-React/
+├── 01-html/
+│   ├── README.md
+│   └── index.html
+├── 02-javascript/
+│   ├── README.md
+│   ├── exerciciosaula02.js
+│   └── aula5funçoes.js
+├── 03-eventos/
+│   ├── README.md
+│   ├── exemploeventomouse.html
+│   └── exemploeventoteclado.html
+├── 05-css-e-formularios/
+│   ├── README.md
+│   └── formularios.html
+├── 08-react/
+│   ├── README.md
+│   ├── Greeting.jsx
+│   ├── UserCard.jsx
+│   ├── date.jsx
+│   └── cadastro.jsx
+├── docs/
+│   ├── ORGANIZACAO.md
+│   └── ESTRUTURA-FINAL.md
+├── archive/
+│   └── README.md
+├── Introduçao Html/
+├── Exercicios aula 22- Formularios/
+├── Exercicios aula 23 - introdução CSS/
+├── Exercicios aula 24 - CSS/
+├── Exercicios aula 25-CSS/
+├── exercicio react/
+├── exercicio aula 16/
+├── exercicios capitulo 19/
+├── exercicios capitulo 20/
+├── exercicios capitulo 27/
+├── exercicos aula 18/
+├── README.md
+├── .gitignore
+└── outros arquivos de aula e exercícios
+```
 
-- Mantivemos os arquivos originais na raiz para evitar quebra de links antigos.
-- A organização por pastas facilita a leitura e o estudo por módulo.
-- O guia detalhado está em [`docs/ORGANIZACAO.md`](./docs/ORGANIZACAO.md).
+## Como usar
+
+- Comece pelo módulo `01-html` para fundamentos de HTML.
+- Em seguida, continue em `02-javascript` e `03-eventos`.
+- Depois, use `05-css-e-formularios` para CSS e formulários.
+- Finalize em `08-react` para exercícios de React.
+
+## Observações importantes
+
+- Os arquivos antigos continuam presentes para compatibilidade com o material original do curso.
+- A pasta `archive/` foi criada para separar o material legado da estrutura ativa.
+- O guia completo está em `docs/ORGANIZACAO.md` e a estrutura futura sugerida em `docs/ESTRUTURA-FINAL.md`.

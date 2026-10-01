@@ -1,25 +1,40 @@
 # Organização do repositório
 
-## Categorias sugeridas
+## Objetivo
 
-| Categoria | Conteúdo |
-| --- | --- |
-| HTML | `Introduçao Html`, arquivos `.html` e exercícios de estrutura de páginas |
-| JavaScript | arquivos `.js`, funções, variáveis e exercícios básicos |
-| Eventos | `exemploeventomouse.html`, `exemploeventoteclado.html` e exercícios relacionados |
-| CSS | pastas das aulas 23, 24 e 25 |
-| Formulários | `Exercicios aula 22- Formularios` |
-| React | `exercicio react`, `Greeting.jsx`, `UserCard.jsx`, `date.jsx` e `cadastro.jsx` |
-| Aulas e capítulos | pastas numeradas por aula ou capítulo |
+Organizar os exercícios do curso por temática, deixando o projeto mais navegável e profissional sem quebrar os materiais já existentes.
 
-## Convenções para novos arquivos
+## Estrutura atual
 
-- Use nomes em `kebab-case`, sem espaços ou acentos: `exercicio-formulario.html`.
-- Use nomes de pastas numerados quando o conteúdo depender da sequência das aulas.
-- Separe componentes React em uma pasta `components/` dentro de cada projeto React.
-- Separe estilos em uma pasta `styles/`.
-- Mantenha um `README.md` dentro de projetos com configuração própria.
+- `01-html/` — introdução e exercícios de HTML
+- `02-javascript/` — lógica, funções e exercícios JS
+- `03-eventos/` — mouse, teclado e interações básicas
+- `05-css-e-formularios/` — CSS e formulários
+- `08-react/` — React e componentes
+- `archive/` — arquivos legados preservados para compatibilidade
+- `docs/` — documentação da organização
+
+## Estrutura recomendada para o futuro
+
+```text
+01-introducao-html/
+02-javascript-basico/
+03-eventos-e-manipulacao-dom/
+04-css-basico/
+05-formularios/
+06-cursos-e-capitulos/
+07-react/
+08-projetos/
+09-material-legacy/
+```
+
+## Regras da organização
+
+- Mantenha arquivos por assunto e não misture conteúdo de aulas diferentes.
+- Preserve links antigos durante a transição.
+- Não remova arquivos legados antes de validar o uso deles em exercícios e referências.
+- Use nomes consistentes em minúsculas e sem acentos em futuras renomeações.
 
 ## Próxima etapa recomendada
 
-Quando todos os exercícios não dependerem mais dos caminhos antigos, os arquivos da raiz poderão ser movidos fisicamente para pastas como `01-html`, `02-javascript`, `03-eventos` e `08-react`. Nesta etapa, os caminhos originais foram preservados deliberadamente.
+Quando o curso estiver concluído e os exercícios estiverem todos referenciados corretamente, é possível fazer uma migração completa dos arquivos legados para a estrutura final acima.
